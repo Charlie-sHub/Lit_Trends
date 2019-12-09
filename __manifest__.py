@@ -1,22 +1,20 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Lit_Trends",
+    'name': "Lit Trends",
 
-    'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+    'summary': """Check the trends""",
 
     'description': """
-        Long description of module's purpose
+        This module allows your company to check what is trending in the Lit Fits application, helping your company make better decisions
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "EuskoCode",
+    'website': "http://www.euskocode.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Fashion',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
