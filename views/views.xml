@@ -1,7 +1,7 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
+    <!-- explicit list view definition -->  
+    <!--  
     <record model="ir.ui.view" id="lit__trends.list">
       <field name="name">Lit_Trends list</field>
       <field name="model">lit__trends.lit__trends</field>
@@ -12,9 +12,8 @@
           <field name="value2"/>
         </tree>
       </field>
-    </record>
+    </record>  
     -->
-
     <!-- actions opening views on models -->
     <!--
     <record model="ir.actions.act_window" id="lit__trends.action_window">

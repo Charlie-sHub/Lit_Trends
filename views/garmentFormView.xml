@@ -3,9 +3,9 @@
     <data>
         <record model="ir.ui.view" id="garment_form_view">
             <field name="name">garmentForm</field>
-            <field name="model">res.garment</field>
+            <field name="model">litTrends.garment</field>
             <field name="arch" type="xml">
-                <form>
+                <form string="Garment Form">
                     <group>
                         <field name="designer"/>
                         <field name="mood"/>
@@ -18,6 +18,10 @@
                     </group>
                 </form>
             </field>
-        </record>        
+        </record> 
+        <!-- top level menu: no parent -->
+        <menuitem id="main_litFits_menu" name="Lit Fits"/>
+        <menuitem id="litFits_menu" name="Lit Fits" parent="main_litFits_menu"/>
+        <menuitem id="garments_menu" name="Garments" parent="litFits_menu" action="course_list_action"/>       
     </data>
 </odoo>
