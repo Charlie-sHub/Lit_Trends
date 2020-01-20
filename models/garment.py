@@ -3,16 +3,12 @@ from Odoo import models
 
 class Garment(models.Model):
     __name = 'litTrends.garment'
+    __inherit = 'product.product'
     
-    barcode = fields.Integer(string="Barcode", required=True)
-    designer = fields.Char(string="Designer")
-    price = fields.Float(string="Price")
-    mood = fields.Selection(('f' 'Formal')('i' 'Informal')('s' 'Sporty'), "Moods")
-    bodyPart = fields.Selection(('t' 'Top')('b' 'Bottom')('s' 'Shoe')('h' 'Head'), "Body Part")
-    garmentType = fields.Selection(('sw' 'SWEATER')('sh' 'SHIRT')('p' 'PANTS')('sho' 'SHORTS')('b' 'BOOTS')('sn' 'SNEAKERS')('b' 'BEANIE')('h' 'HAT'), "Type of Garment")
-    available = fields.Boolean(string="Is it available")
-    promotionRequest = fields.Boolean(string="Requested for promotion") 
-    promoted = fields.Boolean(string="Promoted")
-    materials = fields.Many2Many(litTrends.material, string="Materials")
-    colors = fields.Many2Many(litTrends.color, string="Colors")
-    image # What to do with this?
+    designer = fields.Char(string="Designer", help="Who designed the garment?")
+    mood = fields.Selection(('f' 'Formal')('i' 'Informal')('s' 'Sporty'), "Moods", help="In what kind of situation it should be worn?")
+    bodyPart = fields.Selection(('t' 'Top')('b' 'Bottom')('s' 'Shoe')('h' 'Head'), "Body Part", help="Where to wear it?")
+    garmentType = fields.Selection(('sw' 'SWEATER')('sh' 'SHIRT')('p' 'PANTS')('sho' 'SHORTS')('b' 'BOOTS')('sn' 'SNEAKERS')('b' 'BEANIE')('h' 'HAT'), "Type of Garment", help="What kind of garment is it?")
+    promotionRequest = fields.Boolean(string="Requested for promotion", help="Should it be promoted?") 
+    promoted = fields.Boolean(string="Promoted", help="Is it promoted?")
+    materials = fields.Many2Many(litTrends.material, string="Materials", help="What is it made of?")
