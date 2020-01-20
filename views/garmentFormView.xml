@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="garment_form_view">
+            <field name="name">garmentForm</field>
+            <field name="model">res.garment</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="designer"/>
+                        <field name="mood"/>
+                        <field name="bodyPart"/>
+                        <field name="garmentType"/>
+                        <field name="promotionRequest"/>
+                        <field name="promoted"/>
+                        <field name="materials"/>
+                        <field name="colors"/>
+                    </group>
+                </form>
+            </field>
+        </record>        
+    </data>
+</odoo>

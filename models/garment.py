@@ -12,3 +12,15 @@ class Garment(models.Model):
     promotionRequest = fields.Boolean(string="Requested for promotion", help="Should it be promoted?") 
     promoted = fields.Boolean(string="Promoted", help="Is it promoted?")
     materials = fields.Many2Many(litTrends.material, string="Materials", help="What is it made of?")
+    colors = fields.Many2Many(litTrends.color, string="Colors", help="What colors does it have?")
+    
+    @api.onchange('promoted', 'promotionRequest')
+    def __verify_promoted_or_requested(self):
+        if r.promoted and r.promotionRequest:
+            return {'warning' : {'title': "Contradiction", 'message': "A garment can't be both requesting a promotion and being promoted",},}
+    
+    @api.constrais('promoted', 'promotionRequest')
+    def __check_promoted_or_requested(self):
+        for r in self:
+            if r.promoted and r.promotionRequest:
+                raise exceptions.ValidationError("A garment can't be both requesting a promotion and being promoted") 
