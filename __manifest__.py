@@ -26,6 +26,7 @@
         'views/views.xml',
         'views/templates.xml',
         'views/garmentFormView.xml',
+        'views/lit_trends.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
