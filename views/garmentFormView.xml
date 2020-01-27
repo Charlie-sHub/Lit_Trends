@@ -3,7 +3,7 @@
     <data>
         <record model="ir.ui.view" id="garment_form_view">
             <field name="name">garmentForm</field>
-            <field name="model">litTrends.garment</field>
+            <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
                 <form string="Garment Form">
                     <group>

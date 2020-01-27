@@ -1,9 +1,9 @@
 from Odoo import fields
 from Odoo import models
 
-class Garment(models.Model):
-    __name = 'litTrends.garment'
-    __inherit = 'product.product'
+class Garment(Model):
+    _name = 'littrends.garment'
+    _inherit = 'product.product'
     
     designer = fields.Char(string="Designer", help="Who designed the garment?")
     mood = fields.Selection(('f' 'Formal')('i' 'Informal')('s' 'Sporty'), "Moods", help="In what kind of situation it should be worn?")
@@ -15,12 +15,12 @@ class Garment(models.Model):
     colors = fields.Many2Many(litTrends.color, string="Colors", help="What colors does it have?")
     
     @api.onchange('promoted', 'promotionRequest')
-    def __verify_promoted_or_requested(self):
+    def _verify_promoted_or_requested(self):
         if r.promoted and r.promotionRequest:
             return {'warning' : {'title': "Contradiction", 'message': "A garment can't be both requesting a promotion and being promoted",},}
     
     @api.constrais('promoted', 'promotionRequest')
-    def __check_promoted_or_requested(self):
+    def _check_promoted_or_requested(self):
         for r in self:
             if r.promoted and r.promotionRequest:
                 raise exceptions.ValidationError("A garment can't be both requesting a promotion and being promoted") 
