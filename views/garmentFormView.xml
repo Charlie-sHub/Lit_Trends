@@ -3,7 +3,7 @@
     <data>
         <record model="ir.ui.view" id="garment_form_view">
             <field name="name">garmentForm</field>
-            <field name="model">lit__trends.garment</field>
+            <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
                 <form string="Garment Form">
                     <group>
@@ -21,7 +21,7 @@
         </record> 
         <record model="ir.ui.view" id="garment.list">
             <field name="name">Garment list</field>
-            <field name="model">lit__trends.garment</field>
+            <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="designer"/>
@@ -36,8 +36,8 @@
             </field>
         </record>
         <record model="ir.actions.act_window" id="lit__trends.action_window">
-            <field name="name">Lit_Trends window</field>
-            <field name="res_model">lit__trends.garment</field>
+            <field name="name">Lit Trends Window</field>
+            <field name="res_model">littrends.garment</field>
             <field name="view_mode">tree,form</field>
         </record> 
         <!-- top level menu: no parent -->
