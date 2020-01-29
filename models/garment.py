@@ -32,11 +32,10 @@ class Garment(models.Model):
     
     @api.onchange('promoted', 'promotionRequest')
     def _verify_promoted_or_requested(self):
-        if r.promoted and r.promotionRequest:
+        if self.promoted and self.promotionRequest:
             return {'warning': {'title': "Contradiction", 'message': "A garment can't be both requesting a promotion and being promoted", }, }
     
     @api.constrains('promoted', 'promotionRequest')
     def _check_promoted_or_requested(self):
-        for r in self:
-            if r.promoted and r.promotionRequest:
-                raise exceptions.ValidationError("A garment can't be both requesting a promotion and being promoted") 
+        if self.promoted and self.promotionRequest:
+            raise exceptions.ValidationError("A garment can't be both requesting a promotion and being promoted") 

@@ -19,7 +19,7 @@
                 </form>
             </field>
         </record> 
-        <record model="ir.ui.view" id="garment.list">
+        <record model="ir.ui.view" id="garment_list">
             <field name="name">Garment list</field>
             <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
@@ -35,7 +35,7 @@
                 </tree>
             </field>
         </record>
-        <record model="ir.actions.act_window" id="lit__trends.action_window">
+        <record model="ir.actions.act_window" id="lit__trends_action_window">
             <field name="name">Lit Trends Window</field>
             <field name="res_model">littrends.garment</field>
             <field name="view_mode">tree,form</field>
@@ -43,6 +43,6 @@
         <!-- top level menu: no parent -->
         <menuitem id="main_litFits_menu" name="Lit Fits"/>
         <menuitem id="litFits_menu" name="Lit Fits" parent="main_litFits_menu"/>
-        <menuitem id="garments_menu" name="Garments" parent="litFits_menu" action="course_list_action"/>       
+        <menuitem id="garments_menu" name="Garments" parent="litFits_menu" action="lit__trends_action_window"/>       
     </data>
 </odoo>

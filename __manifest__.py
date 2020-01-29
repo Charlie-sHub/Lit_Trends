@@ -6,6 +6,7 @@
 
     'description': """
         This module allows your company to check what is trending in the Lit Fits application, helping your company make better decisions
+        Requires Products and Pricelists
     """,
 
     'author': "EuskoCode",
@@ -23,8 +24,6 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/views.xml',
-        'views/templates.xml',
         'views/garmentFormView.xml',
         'views/lit_trends.xml',
     ],
