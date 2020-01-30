@@ -2,7 +2,7 @@
 from datetime import timedelta
 from odoo import models, fields, api
 
-class Garment(models.Model): #Extends Product
+class Garment(models.Model): #Extends Product 
 	_inherit = 'product.product'
 	#_name = 'lit_trends.garment'
 
