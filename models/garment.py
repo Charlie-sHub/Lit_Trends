@@ -3,6 +3,8 @@ from odoo import models
 from odoo import api
 from odoo import exceptions
 
+# author: Carlos Mendez
+
 class Garment(models.Model):
     _name = 'littrends.garment'
     _inherit = 'product.product'
