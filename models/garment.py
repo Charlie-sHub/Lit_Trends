@@ -7,7 +7,7 @@ from odoo import exceptions
 
 class Garment(models.Model):
     _name = 'littrends.garment'
-    _inherit = 'product.product'
+    _inherit = 'product.product'    
         
     designer = fields.Many2one('res.user', 
         ondelete='set null', 
