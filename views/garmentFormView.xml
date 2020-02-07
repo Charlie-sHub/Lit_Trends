@@ -8,6 +8,7 @@
             <field name="arch" type="xml">
                 <form string="Garment Form">
                     <group>
+                        <field name="name"/>
                         <field name="designer"/>
                         <field name="mood"/>
                         <field name="bodyPart"/>
