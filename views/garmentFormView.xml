@@ -3,7 +3,7 @@
 <odoo>
     <data>
         <record model="ir.ui.view" id="garment_form_view">
-            <field name="name">garment.form</field>
+            <field name="name">Garment Form</field>
             <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
                 <form string="Garment Form">
@@ -22,7 +22,7 @@
             </field>
         </record> 
         <record model="ir.ui.view" id="garment_list">
-            <field name="name">garmentl.ist</field>
+            <field name="name">Garment List</field>
             <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
                 <tree>
@@ -38,7 +38,7 @@
             </field>
         </record>
         <record model="ir.ui.view" id="garment_search_view">
-            <field name="name">garment.search</field>
+            <field name="name">Garment Search</field>
             <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
                 <search>
@@ -56,6 +56,10 @@
         <!-- top level menu: no parent -->
         <menuitem id="main_litFits_menu" name="Lit Fits"/>
         <menuitem id="litFits_menu" name="Lit Fits" parent="main_litFits_menu"/>
-        <menuitem id="garments_menu" name="Garments" parent="litFits_menu" action="lit__trends_action_window"/>       
+        <menuitem id="garments_menu" name="Garments" parent="litFits_menu" action="lit__trends_action_window"/>
+        <!--  
+        <menuitem id="garments_search" name="Garments Search" parent="litFits_menu" action="garment_search_view"/>
+        <menuitem id="garments_list" name="Garments List" parent="litFits_menu" action="garment_list"/>     
+        -->
     </data>
 </odoo>
