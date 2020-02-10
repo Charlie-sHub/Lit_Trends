@@ -22,7 +22,7 @@
             </field>
         </record> 
         <record model="ir.ui.view" id="garment_list">
-            <field name="name">garment.list</field>
+            <field name="name">garmentl.ist</field>
             <field name="model">littrends.garment</field>
             <field name="arch" type="xml">
                 <tree>

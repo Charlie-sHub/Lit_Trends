@@ -44,12 +44,12 @@ class Garment(models.Model):
             raise exceptions.ValidationError("A garment can't be both requesting a promotion and being promoted") 
         
     @api.constrains('bodyPart', 'garmentType')
-    def _check_garment_type_matches_bodyPart(self):
-        if self.bodyPart == bodyPart.TOP and self.garmentType == garmentType.SHORTS | self.garmentType == garmentType.PANTS | self.garmentType == garmentType.BOOTS | self.garmentType == garmentType.SNEAKERS | self.garmentType == garmentType.BEANIE | self.garmentType == garmentType.HAT:
+    def _check_garmentType_matches_bodyPart(self):
+        if self.bodyPart == bodyPart.TOP and self.garmentType in (garmentType.SHORTS, garmentType.PANTS, garmentType.BOOTS, garmentType.SNEAKERS, garmentType.BEANIE, garmentType.HAT):
             raise exceptions.ValidationError("A garment type should match its body part") 
-        elif self.bodyPart == bodyPart.BOTTOM and self.garmentType == garmentType.SHIRT | self.garmentType == garmentType.SWEATER | self.garmentType == garmentType.BOOTS | self.garmentType == garmentType.SNEAKERS | self.garmentType == garmentType.BEANIE | self.garmentType == garmentType.HAT:
+        elif self.bodyPart == bodyPart.BOTTOM and self.garmentType in (garmentType.SHIRT, garmentType.SWEATER, garmentType.BOOTS, garmentType.SNEAKERS, garmentType.BEANIE, garmentType.HAT):
             raise exceptions.ValidationError("A garment type should match its body part")
-        elif self.bodyPart == bodyPart.SHOE and self.garmentType == garmentType.SHORTS | self.garmentType == garmentType.PANTS | self.garmentType == garmentType.SWEATER | self.garmentType == garmentType.SHIRT | self.garmentType == garmentType.BEANIE | self.garmentType == garmentType.HAT:
+        elif self.bodyPart == bodyPart.SHOE and self.garmentType  in (garmentType.SHORTS, garmentType.PANTS, garmentType.SWEATER, garmentType.SHIRT, garmentType.BEANIE, garmentType.HAT):
             raise exceptions.ValidationError("A garment type should match its body part")
-        elif self.bodyPart == bodyPart.HEAD and self.garmentType == garmentType.SHORTS | self.garmentType == garmentType.PANTS | self.garmentType == garmentType.BOOTS | self.garmentType == garmentType.SNEAKERS | self.garmentType == garmentType.SWEATER | self.garmentType == garmentType.SHIRT:
+        elif self.bodyPart == bodyPart.HEAD and self.garmentType in (garmentType.SHORTS, garmentType.PANTS, garmentType.BOOTS, garmentType.SNEAKERS, garmentType.SWEATER, garmentType.SHIRT):
             raise exceptions.ValidationError("A garment type should match its body part")
