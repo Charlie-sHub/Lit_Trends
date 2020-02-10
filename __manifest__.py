@@ -25,7 +25,6 @@
     'data': [
         # 'security/ir.model.access.csv',
         'views/garmentFormView.xml',
-        'views/lit_trends.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -44,7 +44,7 @@ class Garment(models.Model):
             raise exceptions.ValidationError("A garment can't be both requesting a promotion and being promoted") 
         
     @api.constrains('bodyPart', 'garmentType')
-    def _check_garmentType_matches_bodyPart(self):
+    def _check_garment_type_matches_bodyPart(self):
         if self.bodyPart == bodyPart.TOP and self.garmentType == garmentType.SHORTS | self.garmentType == garmentType.PANTS | self.garmentType == garmentType.BOOTS | self.garmentType == garmentType.SNEAKERS | self.garmentType == garmentType.BEANIE | self.garmentType == garmentType.HAT:
             raise exceptions.ValidationError("A garment type should match its body part") 
         elif self.bodyPart == bodyPart.BOTTOM and self.garmentType == garmentType.SHIRT | self.garmentType == garmentType.SWEATER | self.garmentType == garmentType.BOOTS | self.garmentType == garmentType.SNEAKERS | self.garmentType == garmentType.BEANIE | self.garmentType == garmentType.HAT:
